@@ -36,24 +36,5 @@ namespace BankBot.Dialogs
             context.Wait(MessageReceivedAsync);
         }
 
-        //[LuisIntent("Greetings")]
-        //public async Task Greetings(IDialogContext context, LuisResult result)
-        //{
-        //    List<String> messagePoll = new List<string>
-        //    {
-        //        "Hi",
-        //        "Hello there",
-        //        "Hello"
-        //        //,
-        //        //"Hello " + userData,
-        //        //"Hi " + userData
-        //    };
-
-        //    string message = messagePoll.OrderBy(s => Guid.NewGuid()).First() + ". I am Digital Bank Assistant, How can I help you?";
-
-        //    //string message = "Hi! I am Digital Bank Assistant, How can I help you!";
-        //    await context.PostAsync(message);
-        //    context.Wait(this.MessageReceived);
-        //}
     }
 }
