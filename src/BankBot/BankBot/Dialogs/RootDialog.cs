@@ -16,6 +16,13 @@ namespace BankBot.Dialogs
     public partial class RootDialog : LuisDialog<object>
     //: IDialog<object>
     {
+        private string userData;
+
+        public RootDialog(string userData)
+        {
+            this.userData = userData;
+        }
+
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedAsync);

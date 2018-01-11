@@ -1,4 +1,6 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using BankBot.BLL;
+using BankBot.Security;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis.Models;
 using System;
 using System.Collections.Generic;
@@ -11,21 +13,10 @@ namespace BankBot.Dialogs
     public partial class RootDialog
     {
         [LuisIntent("Greetings")]
+        //[AuthorizeBot()] //not working here
         public async Task Greetings(IDialogContext context, LuisResult result)
         {
-            List<String> messagePoll = new List<string>
-            {
-                "Hi",
-                "Hello there",
-                "Hello"
-                //,
-                //"Hello " + userData,
-                //"Hi " + userData
-            };
-
-            string message = messagePoll.OrderBy(s => Guid.NewGuid()).First() + ". I am Digital Bank Assistant, How can I help you?";
-
-            //string message = "Hi! I am Digital Bank Assistant, How can I help you!";
+            string message = new GreetingsManager().GetGreetingMessage(userData);
             await context.PostAsync(message);
             context.Wait(this.MessageReceived);
         }

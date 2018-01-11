@@ -11,7 +11,9 @@ namespace BankBot.BLL
         public string GetAccountHolderInfo()
         {
             string msg = string.Empty;
-            msg = "Your Account Name is: Md. Mahedee Hasan. Your Account Number: 962002433 Account Opening Branch: Matijheel, Dhaka";
+            msg = "Your Account Name is: Md. Mahedee Hasan. " +
+                "<br/>Your Account Number: 962002433." +
+                "<br/>Account Opening Branch: Matijheel, Dhaka";
             return msg;
         }
     }

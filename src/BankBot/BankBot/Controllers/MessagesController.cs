@@ -4,10 +4,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System;
+using BankBot.Security;
 
 namespace BankBot
 {
     [BotAuthentication]
+    //[AuthorizeBot()] //working here
     public class MessagesController : ApiController
     {
         /// <summary>
@@ -16,9 +19,25 @@ namespace BankBot
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+
+                ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+
+                // If user send any images then do not replay antyhing. Just skip it.
+                if (activity.Attachments.Count == 0)
+                {
+                    // send typing indicator
+                    Activity typeing = activity.CreateReply();
+                    typeing.Type = ActivityTypes.Typing;
+                    await connector.Conversations.ReplyToActivityAsync(typeing);
+
+                    var userData = activity.From.Name;
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog(userData));
+                }
+
+                
             }
             else
             {
