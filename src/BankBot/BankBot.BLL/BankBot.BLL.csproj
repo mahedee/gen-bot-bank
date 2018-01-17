@@ -47,5 +47,11 @@
     <Compile Include="OthersManager.cs" />
     <Compile Include="TransactionManager.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankBot.Model\BankBot.Model.csproj">
+      <Project>{d2f65c2a-8a4e-414b-8f44-221c4e45ef55}</Project>
+      <Name>BankBot.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

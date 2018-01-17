@@ -1,4 +1,19 @@
-﻿using System.Net;
+﻿///	Copyright		:	Copyright© LEADSOFT 2018. All rights reserved.
+///	NameSpace		:	BankBot
+/// Class           :   MessagesController
+/// Inherits        :   NA
+///	Author			:	Md. Mahedee Hasan
+///	Purpose			:	To handle all incomming message from channel
+///	Creation Date	:	02/01/2018
+/// ==================================================================================================
+///  || Modification History ||
+///  -------------------------------------------------------------------------------------------------
+///  Sl No.	Date:		Author:			    Ver:	Area of Change:     
+///  1.     02-01-2018  Mahedee             1.0     Created
+///	**************************************************************************************************
+///	
+
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;

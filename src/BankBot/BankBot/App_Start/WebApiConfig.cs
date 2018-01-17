@@ -1,4 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿///	Copyright		:	Copyright© LEADSOFT 2018. All rights reserved.
+///	NameSpace		:	BankBot
+/// Class           :   WebApiConfig
+/// Inherits        :   NA
+///	Author			:	Md. Mahedee Hasan
+///	Purpose			:	To configure api routing
+///	Creation Date	:	02/01/2018
+/// ==================================================================================================
+///  || Modification History ||
+///  -------------------------------------------------------------------------------------------------
+///  Sl No.	Date:		Author:			    Ver:	Area of Change:     
+///  1.     02-01-2018  Mahedee             1.0     Created
+///	**************************************************************************************************
+///	
+
+
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;

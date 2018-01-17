@@ -1,4 +1,18 @@
-﻿using System;
+﻿///	Copyright		:	Copyright© LEADSOFT 2018. All rights reserved.
+///	NameSpace		:	BankBot.Dialogs
+/// Class           :   RootDialog
+/// Inherits        :   NA
+///	Author			:	Md. Mahedee Hasan
+///	Purpose			:	A partial class of RootDialog. Actually main class to handle incomming message for corresponding luis intend
+///	Creation Date	:	02/01/2018
+/// ==================================================================================================
+///  || Modification History ||
+///  -------------------------------------------------------------------------------------------------
+///  Sl No.	Date:		Author:			    Ver:	Area of Change:     
+///  1.     02-01-2018  Mahedee             1.0     Created
+///	**************************************************************************************************
+///	
+using System;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
